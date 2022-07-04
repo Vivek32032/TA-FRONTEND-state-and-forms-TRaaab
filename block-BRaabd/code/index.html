@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <title>Games</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+    
+</body>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    class CreateUI extends React.Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                image : "../assets/basketball.jpg"
+            }
+
+        }
+        render(){
+            return (
+                <div>
+                <nav>
+                      <button onClick={() => this.setState({image : "../assets/basketball.jpg"})}>Basketball</button>
+                      <button onClick={() => this.setState({image : "../assets/pubg.jpeg"})}>PubG</button>
+                      <button onClick={() => this.setState({image : "../assets/tiger.jpg"})}>Tiger</button>
+                      <button onClick={() => this.setState({image : "../assets/phone.jpg"})}>Phone</button>
+                      <button onClick={() => this.setState({image : "../assets/laptop.jpg"})}>Laptop</button>
+                      <button onClick={() => this.setState({image : "../assets/cricket.jpg"})}>Cricket</button>
+
+                </nav>
+                <div>
+                    <img src={this.state.image} alt=""/>
+                </div>
+                </div>    
+            )
+        }
+    }
+
+    ReactDOM.render(<CreateUI/>,document.getElementById("root"))
+
+</script>
+
+</html>
