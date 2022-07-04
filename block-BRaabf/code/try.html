@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <title>title</title>
+</head>
+<body>
+    <main>
+        <div id="root">
+
+        </div>
+    </main>
+</body>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    class CreateUI extends React.Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                count : 0,
+            }
+
+        }
+        increment = () => {
+            if(this.state.count<this.max){
+            this.setState({
+                count : this.state.count+this.active,
+            })}
+        }
+        decrement = () => {
+            this.setState({
+                count : this.state.count-this.active,
+            })
+        }
+        reset = () => {
+            this.active =1;
+            this.max = Infinity;
+            this.setState({
+                count : 0,
+            })
+        }
+        active = 1;
+        max = Infinity;
+        render(){
+            return (
+                <>
+                <h1>{this.state.count}</h1>
+                <div>
+                    <button onClick={()=>{this.active = 5}}>5</button>
+                    <button onClick={()=>{this.active = 10}}>10</button>
+                    <button onClick={()=>{this.active = 15}}>15</button>
+                </div>
+                <div>
+                    <button onClick={()=>{this.max = 15}}>15</button>
+                    <button onClick={()=>{this.max = 100}}>100</button>
+                    <button onClick={()=>{this.max = 200}}>200</button>
+                </div>
+                <div>
+                    <button onClick={this.increment}>Increment</button>
+                    <button onClick={this.decrement}>Decrement</button>
+                    <button onClick={this.reset}>Reset</button>
+                </div>
+                </>
+            )
+        }
+    }
+    ReactDOM.render(<CreateUI/>,document.getElementById('root'))
+</script>
+</html>
