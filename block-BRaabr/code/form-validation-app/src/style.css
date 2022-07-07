@@ -1,0 +1,21 @@
+label {
+   margin-top: 20px;
+   font-size: 1.5rem;
+}
+body{
+    background-color: rgba(127, 181, 127, 0.8);
+}
+
+.submitBtn{
+    margin-top: 20px;
+    padding: 5px;
+    background-color: rgb(228, 57, 57);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+form{
+    padding: 2rem;
+    width: 50%;
+    background-color: rgb(140, 167, 140);
+}
